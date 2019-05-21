@@ -1,0 +1,23 @@
+{
+  "name": "personal-site",
+  "version": "0.0.1",
+  "description": "kirsanov's Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && polymer build && cp -a build/fallback/lib/. build/default/fallback && rm -rf build/fallback",
+    "dev": "tsc --watch & polymer serve --npm -o",
+    "serveprod": "firebase serve -o 0.0.0.0",
+    "deploy": "npm run build && firebase deploy"
+  },
+  "author": "danilakirsanovspb@gmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/redux": "^3.6.0",
+    "typescript": "^3.3.4000"
+  },
+  "dependencies": {
+    "lit-element": "^2.1.0",
+    "pwa-helpers": "^0.9.1"
+  }
+}

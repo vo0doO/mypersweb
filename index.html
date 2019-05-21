@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--
+ _  _____ ____  ____    _    _   _  _____     __  ____         ___      
+| |/ /_ _|  _ \/ ___|  / \  | \ | |/ _ \ \   / / |  _ \       / _ \     
+| ' / | || |_) \___ \ / _ \ |  \| | | | \ \ / /  | | | |     | | | |    
+| . \ | ||  _ < ___) / ___ \| |\  | |_| |\ V /   | |_| |  _  | |_| |  _ 
+|_|\_\___|_| \_\____/_/   \_\_| \_|\___/  \_/    |____/  (_)  \___/  (_)
+                                                                                                                               
+  -->
+  <title>Danila Kirsanov</title>
+
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-navbutton-color" content="#000000">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/ico" href="/assets/img/favicon.ico?v=1">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+        }).catch(function (err) {
+          // registration failed :(
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+  </style>
+  <script nomodule>
+      document.write('<!-- IE doesn\'t support this');
+      window.doesNotSupportModules = true;
+    </script>
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script type="module" src="/lib/components/kirsanov-main-page.js"></script>
+    <!--! do not remove for IE11 -->
+    <script>
+      if (!window.doesNotSupportModules) {
+        document.write('<!-- only for IE');
+      }
+    </script>
+  <script type="application/javascript" src="/polyfills/polyfills.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script>
+  <script type="application/javascript" src="https://unpkg.com/@polymer/esm-amd-loader"></script>
+  <script type="application/javascript" src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script type="application/javascript" src="/build/default/fallback/components/kirsanov-main-page.js"></script>
+  <!--! do not remove for IE11 -->
+</head>
+<body>
+  <noscript>
+    Sorry, but this page won't work without javascript rn :(
+  </noscript>
+
+  <kirsanov-main-page></kirsanov-main-page>
+  <script>
+    // async load font
+    window.onload = function () {
+      const style = document.createElement('style');
+      style.innerHTML = '@font-face {font-family: ElliScript;src: url(/assets/files/ElliScript.ttf);}';
+      document.head.appendChild(style);
+    };
+
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-140466119-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <script src="/__/firebase/6.0.2/firebase-app.js"></script>
+  <script src="/__/firebase/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{
+  "entrypoint": "index.html",
+  "shell": "lib/components/kirsanov-main-page.js",
+  "builds": [
+    {
+      "name": "default",
+      "js": {
+        "minify": true,
+        "compile": false
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    },
+    {
+      "name": "fallback",
+      "js": {
+        "minify": true,
+        "compile": true,
+        "transformModulesToAmd": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true
+    }
+  ],
+  "fragments": [],
+  "sources": [
+    "assets/**/**",
+    "polyfills/**/**"
+  ],
+  "extraDependencies": [
+    "manifest.json"
+  ],
+  "lint": {
+    "rules": [
+      "polymer-3"
+    ]
+  }
+}

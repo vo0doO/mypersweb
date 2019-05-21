@@ -1,0 +1,4 @@
+[submodule "polymer_tools"]
+	path = polymer_tools
+	url = /home/vo0/WebstormProjects/kirsanov-do-personal-site/tools/polymer_tools
+	branch = master
